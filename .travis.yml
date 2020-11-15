@@ -1,0 +1,16 @@
+language: java
+sudo: false
+
+dist: xenial
+
+services:
+  - docker
+  - xvfb
+
+before_script:
+  - sleep 3
+
+script:
+  - docker-compose up -d
+  - sleep 3
+  - ./mvnw clean test -Dcucumber.filter.tags="@SmokeTest"
