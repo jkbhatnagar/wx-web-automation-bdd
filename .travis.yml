@@ -13,4 +13,4 @@ before_script:
 script:
   - docker-compose up -d
   - sleep 3
-  - ./mvnw clean test -Dcucumber.filter.tags="@SmokeTest"
+  - ./mvnw clean test -Dcucumber.filter.tags="@SmokeTest" -Dbrowser=chrome -Dexemode=remote -Dosname=linux
